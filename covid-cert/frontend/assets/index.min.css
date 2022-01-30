@@ -1,0 +1,370 @@
+@font-face {
+    font-family: "Lato";
+    src: url(https://gu-st.ru/covid-web-st/static-pages-assets/Lato-Regular.bb882f4771ef3a86e3a1.woff2) format("woff2"), url(https://gu-st.ru/covid-web-st/static-pages-assets/Lato-Regular.bb882f4771ef3a86e3a1.woff2) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Lato-Bold";
+    src: url(https://gu-st.ru/covid-web-st/static-pages-assets/Lato-Bold.39775d377afbc753c1d1.woff2) format("woff2"), url(https://gu-st.ru/covid-web-st/static-pages-assets/Lato-Bold.39775d377afbc753c1d1.woff2) format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
+}
+
+.animated {
+    -webkit-animation: rotation 1.4s infinite linear forwards;
+    animation: rotation 1.4s infinite linear forwards
+}
+
+@keyframes pulse {
+    from {
+        transform: scale3d(0.6, 0.6, 0.6);
+        opacity: .4
+    }
+    to {
+        transform: scale3d(1.1, 1.1, 1.1);
+        opacity: 0
+    }
+}
+
+.pulse {
+    animation-name: pulse
+}
+
+.container-app-loader {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10000000000;
+    background: #fff;
+    opacity: 1
+}
+
+.container-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    width: 200px;
+    height: 200px;
+    background: #fff url(https://gu-st.ru/covid-web-st/static-pages-assets/HEX_blue.e0544782cd99d0fba77b.svg) no-repeat center center;
+    opacity: .3
+}
+
+.container-app-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -61px 0 0 -61px;
+    width: 122px;
+    height: 122px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url(https://gu-st.ru/covid-web-st/static-pages-assets/HEX.d47a7cda205691b07950.svg) no-repeat center center
+}
+
+.app-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0 0 -50px;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url(https://gu-st.ru/covid-web-st/static-pages-assets/gos_logo_mobile.9ea844b130533f5a6099.svg) no-repeat center center
+}
+
+body {
+    font-family: Lato-Bold, Arial, sans-serif;
+    color: #0b1f33
+}
+
+.lang {
+    font-size: 16px
+}
+
+.vaccine-result {
+    max-width: 350px;
+    text-align: center;
+    padding-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.mr-24 {
+    margin-right: 24px
+}
+
+.mt-52 {
+    margin-top: 52px
+}
+
+.mb-32 {
+    margin-bottom: 32px
+}
+
+.align-items-center {
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.justify-between {
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.flex-container {
+    display: -ms-flexbox;
+    display: flex
+}
+
+.logo {
+    background: url("data:image/svg+xml,%3Csvg width%3D%22151%22 height%3D%2224%22 viewBox%3D%220 0 151 24%22 fill%3D%22none%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath fill-rule%3D%22evenodd%22 clip-rule%3D%22evenodd%22 d%3D%22M12.1105 0.633247H0.237221C0.0789109 0.633247 -0.000244141 0.712402 -0.000244141 0.870712V17.335C-0.000244141 17.4933 0.0789109 17.5724 0.237221 17.5724H4.27413C4.43244 17.5724 4.51159 17.4933 4.51159 17.335V4.591H10.7648C10.844 4.591 10.9231 4.51184 11.0023 4.43269C11.4772 3.32452 11.9522 2.13719 12.4271 0.949867V0.712402C12.2688 0.712402 12.1896 0.633247 12.1105 0.633247ZM45.5139 13.6147C45.5139 13.5355 45.4347 13.4564 45.3556 13.4564H45.1181C44.1683 13.773 42.3477 14.1688 41.0021 14.1688C38.2316 14.1688 36.886 13.4564 36.886 9.10283C36.886 5.69917 37.2818 4.03691 41.0021 4.03691C42.0311 4.03691 43.0601 4.19522 44.2474 4.591C44.3266 4.591 44.4849 4.591 44.4849 4.43269C44.9598 3.56198 45.5139 2.53297 46.1471 1.18733V0.949868C46.1471 0.870713 46.068 0.791558 45.9888 0.791558C44.4057 0.316628 42.4268 0.0791626 40.6854 0.0791626C34.828 0.0791626 32.2158 2.77043 32.2158 9.02368C32.2158 15.3561 34.828 18.1265 40.6854 18.1265C42.1102 18.1265 45.039 17.8099 46.4637 17.2558C46.6221 17.1766 46.6221 17.0975 46.6221 17.0183C46.7804 16.9392 45.5139 13.6147 45.5139 13.6147ZM21.3716 0.158318C15.5933 0.158318 13.2978 2.61212 13.2978 9.10283C13.2978 15.6727 15.5141 18.1265 21.3716 18.1265C27.2291 18.1265 29.5246 15.5935 29.5246 9.10283C29.5246 2.69128 27.2291 0.158318 21.3716 0.158318ZM21.3716 14.3271C18.6803 14.3271 17.8888 13.6147 17.8888 9.18199C17.8888 4.43269 18.7595 4.03691 21.3716 4.03691C23.9837 4.03691 24.9336 4.43269 24.9336 9.18199C24.9336 13.6147 24.0629 14.3271 21.3716 14.3271Z%22 fill%3D%22%230065B1%22%2F%3E%3Cpath fill-rule%3D%22evenodd%22 clip-rule%3D%22evenodd%22 d%3D%22M132.98 0.63324H121.107C120.949 0.63324 120.87 0.712395 120.87 0.870705V17.3349C120.87 17.4933 120.949 17.5724 121.107 17.5724H125.144C125.302 17.5724 125.381 17.4933 125.381 17.3349V4.59099H131.635C131.714 4.59099 131.872 4.51184 131.872 4.43268C132.347 3.32451 132.822 2.13719 133.297 0.94986V0.712395C133.059 0.712395 133.059 0.63324 132.98 0.63324ZM117.941 0.712395H113.825C113.746 0.712395 113.587 0.79155 113.587 0.870705C112.954 3.40367 111.688 7.67804 109.867 12.1107L105.751 0.79155C105.751 0.712395 105.593 0.63324 105.513 0.63324H101.397C101.318 0.63324 101.239 0.712395 101.16 0.712395C101.081 0.79155 101.081 0.870705 101.16 0.94986L107.334 17.7307C106.701 18.9972 106.068 20.0262 105.593 21.1344C105.197 21.8468 104.801 22.6383 104.326 23.4299C104.247 23.509 104.326 23.5882 104.326 23.6673C104.405 23.7465 104.484 23.8257 104.564 23.8257H108.996C109.075 23.8257 109.155 23.7465 109.234 23.6673C109.946 22.2426 110.975 20.1845 111.846 18.1265C114.458 11.9524 116.595 6.25325 118.099 0.94986C118.099 0.870705 118.099 0.79155 118.02 0.712395H117.941ZM79.7089 13.6147C79.7089 13.5355 79.6298 13.4564 79.5506 13.4564H79.3132C78.3633 13.773 76.5427 14.1687 75.1971 14.1687C72.4267 14.1687 71.081 13.4564 71.081 9.10283C71.081 5.69916 71.4768 4.03691 75.1971 4.03691C76.2261 4.03691 77.2551 4.19522 78.4425 4.59099C78.6008 4.59099 78.6799 4.59099 78.6799 4.43268C79.1549 3.56198 79.7089 2.53296 80.3422 1.18733V0.94986C80.3422 0.870705 80.263 0.79155 80.1839 0.79155C78.5216 0.237465 76.5427 0 74.8805 0C69.1022 0 66.4901 2.69127 66.4901 8.94452C66.4901 15.2769 69.1022 18.0473 74.9596 18.0473C76.3844 18.0473 79.3132 17.7307 80.738 17.1766C80.8963 17.0975 80.8963 17.0183 80.8963 16.9392C80.8963 16.86 79.7089 13.6147 79.7089 13.6147ZM65.0653 0.712395H60.9492C60.7909 0.712395 60.7117 0.79155 60.7117 0.870705C60.0785 3.40367 58.812 7.67804 56.9915 12.1107L52.9546 0.712395C52.9546 0.63324 52.7962 0.554085 52.7171 0.554085H48.601C48.5219 0.554085 48.4427 0.63324 48.3636 0.63324C48.2844 0.712395 48.2844 0.79155 48.3636 0.870705L54.6168 17.6516C53.9836 18.918 53.3503 20.0262 52.8754 21.0552C52.4796 21.7676 52.0839 22.5592 51.6089 23.3507C51.5298 23.4299 51.6089 23.509 51.6089 23.5882C51.6881 23.6673 51.7672 23.7465 51.8464 23.7465H56.2791C56.3582 23.7465 56.4374 23.6673 56.5165 23.5882C57.2289 22.1634 58.2579 20.1054 59.1286 18.0473C61.7408 11.8733 63.8779 6.17409 65.3819 0.870705C65.3819 0.79155 65.3819 0.712395 65.3027 0.63324C65.2236 0.712395 65.1444 0.712395 65.0653 0.712395ZM150.157 0.63324H146.12C145.962 0.63324 145.883 0.712395 145.883 0.870705V13.6147C145.012 13.8521 144.141 13.9313 143.112 13.9313C140.421 13.9313 139.867 13.1397 139.867 9.57776V0.870705C139.867 0.712395 139.788 0.63324 139.629 0.63324H135.592C135.434 0.63324 135.355 0.712395 135.355 0.870705V10.0527C135.355 15.7518 137.255 18.0473 142.241 18.0473C145.012 18.0473 148.257 17.3349 150.078 16.6226C150.157 16.6226 150.236 16.4642 150.236 16.3851V0.870705C150.394 0.712395 150.315 0.63324 150.157 0.63324ZM98.1521 0.63324H85.883C85.7247 0.63324 85.6456 0.712395 85.6456 0.870705C85.329 6.41156 84.2999 12.4273 82.796 17.2558V17.4141C82.8752 17.4933 82.9543 17.4933 83.0335 17.4933H87.3078C87.387 17.4933 87.5453 17.4141 87.5453 17.3349C88.7326 13.6147 89.6825 8.6279 89.9991 4.51184H94.036V17.3349C94.036 17.4933 94.1152 17.5724 94.2735 17.5724H98.3104C98.4687 17.5724 98.5478 17.4933 98.5478 17.3349V0.870705C98.3895 0.712395 98.3104 0.63324 98.1521 0.63324Z%22 fill%3D%22%23EE3F58%22%2F%3E%3C%2Fsvg%3E") 0 100% no-repeat;
+    background-size: contain;
+    display: block;
+    height: 24px;
+    overflow: hidden;
+    text-indent: 100%;
+    width: 126px
+}
+
+.vaccine-result {
+    max-width: 350px;
+    text-align: center;
+    padding-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.translate-button:hover {
+    cursor: pointer
+}
+
+.status-container {
+    width: 100%;
+    border-radius: 16px;
+    text-align: center;
+    position: relative
+}
+
+.status-container-inner {
+    position: absolute;
+    top: 22px;
+    bottom: 22px;
+    left: 30px;
+    right: 30px;
+    z-index: 2;
+    flex-direction: column;
+    display: flex;
+    justify-content: center
+}
+
+.status-value {
+    display: inline-block;
+    padding: 6px 32px;
+    background: #fff;
+    border-radius: 16px
+}
+
+.not-found {
+    background: #fff;
+    color: #000
+}
+
+.person-data-value {
+    flex: 1 0 350px
+}
+
+.person-data-wrap {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.expiry-date-container {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1
+}
+
+.person-data-dates {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e1e1e1
+}
+
+.person-data-wrap {
+    display: flex;
+    justify-content: center
+}
+
+.person-data-wrap:last-of-type {
+    margin-bottom: 0
+}
+
+.hide {
+    display: none !important
+}
+
+.qr-container {
+    text-align: center
+}
+
+.qr-number {
+    color: #0b1f33;
+    font-weight: bold;
+    font-size: 20px
+}
+
+.qr-container img {
+    width: 228px;
+    height: 228px
+}
+
+.title-h4 {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+    color: #fff
+}
+
+.error-container .title-h4 {
+    color: #0b1f33
+}
+
+.title-h6 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0
+}
+
+.text-center {
+    text-align: center
+}
+
+.status-container.invalid .status-title {
+    color: #fff
+}
+
+.white {
+    color: #fff
+}
+
+.small-text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #0b1f33
+}
+
+.mt-12 {
+    margin-top: 12px
+}
+
+.mt-16 {
+    margin-top: 16px
+}
+
+.mr-4 {
+    margin-right: 4px
+}
+
+.mr-12 {
+    margin-right: 12px
+}
+
+.gray {
+    color: #66727f
+}
+
+.bold {
+    font-weight: 600
+}
+
+.status-value {
+    display: inline-block;
+    padding: 6px 32px;
+    background: #fff;
+    border-radius: 16px;
+    font-weight: 400
+}
+
+.person-data-dates {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e1e1e1
+}
+
+.mt-20 {
+    margin-top: 20px
+}
+
+.person-data-wrap:last-of-type {
+    margin-bottom: 0
+}
+
+.person-data-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.mt-24 {
+    margin-top: 24px
+}
+
+.mb-4 {
+    margin-bottom: 4px
+}
+
+.person-data-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.button {
+    display: block;
+    border: 2px solid #0d4cd3;
+    border-radius: 8px;
+    padding: 14px 0;
+    text-align: center;
+    text-decoration: none;
+    color: #0d4cd3
+}
+
+.ml-24 {
+    margin-left: 24px
+}
+
+.mr-8 {
+    margin-right: 8px
+}
+
+.additional-info {
+    color: #66727f;
+    font-size: 18px;
+    line-height: 24px
+}
+
+.error-container {
+    max-width: 480px;
+    padding: 32px;
+    background: #fff;
+    box-shadow: 0 1px 4px #e3ebfc, 0 24px 48px rgba(230, 235, 245, .4);
+    border-radius: 12px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto
+}
