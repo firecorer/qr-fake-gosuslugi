@@ -8,7 +8,7 @@ if (isset($_GET['cert_id'])) {
 
     $db = new PDO('mysql:host=' . $config['host'] . ';dbname=' . $config['database'], $config['user'], $config['password']);
 
-    $sql = "SELECT * FROM certs WHERE id = :cert_id";
+    $sql = "SELECT * FROM certs WHERE hash = :cert_id";
     $stmt = $db->prepare($sql);
     $stmt->execute($userdata);
 

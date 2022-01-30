@@ -32,7 +32,8 @@ CREATE TABLE `certs` (
   `valid_date` varchar(16) NOT NULL,
   `name` varchar(128) NOT NULL,
   `dob` varchar(16) NOT NULL,
-  `passport` varchar(32) NOT NULL
+  `passport` varchar(32) NOT NULL,
+  `hash` varchar(128) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --

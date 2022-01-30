@@ -9,6 +9,8 @@
     <style>
         html, body {
             background: #e4ecfd;
+            font-family: Lato-Bold, Arial, sans-serif;
+            color: #0b1f33;
         }
 
         input {

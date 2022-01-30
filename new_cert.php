@@ -11,18 +11,19 @@ if (isset($_POST['id']) && isset($_POST['date']) && isset($_POST['name']) && iss
             'date' => $_POST['date'],
             'name' => $_POST['name'],
             'dob' => $_POST['dob'],
-            'passport' => $_POST['passport']
+            'passport' => $_POST['passport'],
+            'hash' => sha1($_POST['id'])
         );
 
         $db = new PDO('mysql:host=' . $config['host'] . ';dbname=' . $config['database'], $config['user'], $config['password']);
 
-        $sql = "INSERT INTO certs (id, valid_date, name, dob, passport) VALUES (:id, :date, :name, :dob, :passport)";
+        $sql = "INSERT INTO certs (id, valid_date, name, dob, passport, hash) VALUES (:id, :date, :name, :dob, :passport, :hash)";
         $stmt = $db->prepare($sql);
         $stmt->execute($userdata);
 
-        QRCode::png("https://" . $config['domain'] . "/covid-cert/status.php?cert_id=" . $_POST['id'], 'qr_codes/' . $_POST['id'] . ".png", "H");
+        QRCode::png("https://" . $config['domain'] . "/covid-cert/status.php?cert_id=" . sha1($_POST['id']), 'qr_codes/' . sha1($_POST['id']) . ".png", "H");
 
-        echo '<a href="covid-cert/status.php?cert_id=' . $_POST['id'] . '">Открыть сертификат</a><br>';
-        echo '<a href="qr_codes/' . $_POST['id'] . '.png">Открыть QR код</a>';
+        echo '<a href="covid-cert/status.php?cert_id=' . sha1($_POST['id']) . '">Открыть сертификат</a><br>';
+        echo '<a href="qr_codes/' . sha1($_POST['id']) . '.png">Открыть QR код</a>';
     }
 }
